@@ -14,38 +14,38 @@ int main(void)
  
  	LED_Init();			     
 	KEY_Init(); 
-  TIM3_Int_Init(9999 , 3599);	 //10KhzµÄ¼ÆÊýÆµÂÊ£¬¼ÆÊýµ½10000Îª1s 
-  for(i=0;i<5;i++)
-				{
-						delay_ms(1000);
-				}	 	
+        TIM3_Int_Init(9999 , 3599);	 //10Khzçš„è®¡æ•°é¢‘çŽ‡ï¼Œè®¡æ•°åˆ°10000ä¸º1s 
+        for(i=0;i<5;i++)
+	{					
+		delay_ms(1000);
+	}	 	
 
 	while(1)
 	{
-	//KEY0ÈËÌåºìGPIO_Pin_6 ¼ì²éµ½ÈËµÍµçÆ½  KEY1ÆÕÍ¨ºìÍâ¿ª¹Ø P7¼ì²éµ½ÕÚµ²ÎïµÍµçÆ½
+	//KEY0äººä½“çº¢GPIO_Pin_6 æ£€æŸ¥åˆ°äººä½Žç”µå¹³  KEY1æ™®é€šçº¢å¤–å¼€å…³ P7æ£€æŸ¥åˆ°é®æŒ¡ç‰©ä½Žç”µå¹³
 	
-		     if( KEY1==1)
-				 {
-					   i=30;
-					   while(--i)
-						 {
-								delay_ms(1000);
-						    if( KEY1!=1 )
-								break;										
+		 if( KEY1==1)
+		{
+			i=30;
+			while(--i)
+			{
+				delay_ms(1000);
+				if( KEY1!=1 )
+				break;										
 							
-					    }
-						 if(i==0)
-						 {
-								LED1=1;
-								//TIM_Cmd(TIM3, ENABLE );  //Ê¹ÄÜTIMx
-								for(i=0;i<10;i++)
-								{
-									 delay_ms(1000);
-								}	
-								LED1=0;
-						 }
-         }	
+			}
+			if(i==0)
+			{
+				LED1=1;
+				//TIM_Cmd(TIM3, ENABLE );  //ä½¿èƒ½TIMx
+				for(i=0;i<10;i++)
+				{
+					delay_ms(1000);
+				}	
+				LED1=0;
+			}
+                }	
 		
-		}
+       }
 }
 
